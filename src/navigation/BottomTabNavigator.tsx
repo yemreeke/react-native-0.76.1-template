@@ -3,13 +3,14 @@ import { BottomTabBarButtonProps, createBottomTabNavigator } from "@react-naviga
 import { NavigationProp } from "@react-navigation/native";
 import { responsiveHeight, responsiveWidth } from "constants/Dimension";
 import Colors from "resources/Colors";
-import CustomText from "components/CustomText";
 import { TouchableOpacity } from "react-native";
 import { IS_TABLET } from "constants/Constants";
 import { SCREENS } from "./types";
 import { IconTypes, SvgIcon } from "components/SvgIcon";
 import HomeScreen from "screens/HomeScreen";
 import ProfileScreen from "screens/ProfileScreen";
+import Fonts from "resources/Fonts";
+import CustomText from "components/CustomText";
 const Tab = createBottomTabNavigator();
 interface Props {
   navigation: NavigationProp<any, any>
@@ -41,7 +42,7 @@ const BottomTabNavigator = (props: Props) => {
             marginLeft: IS_TABLET ? responsiveWidth(10) : 0,
             fontSize: IS_TABLET ? 20 : 11,
             color: focused ? Colors.Primary : Colors.Gray,
-            // fontFamily: Fonts.Poppins_Medium_500,
+            fontFamily: Fonts.Poppins_Medium_500,
           }}>{children}</CustomText>
         },
         tabBarStyle: IS_TABLET ? {
